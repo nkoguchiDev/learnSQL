@@ -5,7 +5,7 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      POSTGRES_USER: mebee
+      POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
       PGPASSWORD: password123
       POSTGRES_DB: sample
