@@ -5,8 +5,13 @@ name = "pypi"
 
 [packages]
 pytest = "*"
-pydantic = "==1.9.0"
+pydantic = {extras = ["email"], version = "*"}
 sqlalchemy = "*"
+psycopg2 = "*"
+fastapi = "*"
+passlib = {extras = ["bcrypt"], version = "*"}
+bcrypt = "*"
+python-jose = {extras = ["cryptography"], version = "*"}
 
 [dev-packages]
 
