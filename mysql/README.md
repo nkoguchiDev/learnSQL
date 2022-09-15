@@ -48,7 +48,19 @@ SELECT id FROM mytable;
 
 SELECT * FROM mytable\G
 
+SELECT * FROM mytable ORDER BY id;
+SELECT * FROM mytable ORDER BY BINARY name;
+SELECT * FROM mytable ORDER BY id DESC;
+SELECT * FROM mytable ORDER BY id DESC, name;
+SELECT * FROM mytable ORDER BY FIELD (id, 1, 0, 2);
+SELECT * FROM mytable ORDER BY id > 1 DESC;
 SELECT * FROM mytable ORDER BY id LIMIT 1;
+
+SELECT * FROM mytable LIMIT 2 OFFSET 1;
+
+SELECT name FROM mytable GROUP BY name;
+SELECT name, COUNT(*) FROM mytable GROUP BY name;
+SELECT name, COUNT(id), MAX(id), MIN(id), SUM(id), AVG(id) FROM mytable GROUP BY name;
 
 SELECT * FROM mytable WHERE name = 'testnkoguchi';
 SELECT * FROM mytable WHERE id=0 AND name='nkoguchi';
