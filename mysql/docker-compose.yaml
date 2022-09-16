@@ -5,11 +5,14 @@ services:
     image: mysql:8.0
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./mysql/:/docker-entrypoint-initdb.d/
     environment: 
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - "3306:3306"
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
 
 volumes:
   mysql-data:
